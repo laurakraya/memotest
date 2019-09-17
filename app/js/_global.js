@@ -1,5 +1,5 @@
 // Global
-app.global = {
+/* app.global = {
     init: function(){ // Load all global functions here
         console.log("load global functions");
         app.global.loadHeader();
@@ -10,4 +10,4 @@ app.global = {
 }
 
 // Run the global stuff
-app.global.init();
+app.global.init(); */
