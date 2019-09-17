@@ -1,0 +1,67 @@
+//MEDIA QUERIES
+
+@mixin media-breakpoint-down($bp) {
+  @media (max-width: (map-get($breakpoints, $bp) - 1)) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($min, $max) {
+  @media (min-width: map-get($breakpoints, $min)) and (max-width: (map-get($breakpoints, $max) - 1)) {
+    @content;
+  }
+}
+
+//TRANSITIONS
+
+@mixin transition($transition-time: .25s, $transition-property: all, $method: ease-in-out) {
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin fadeIn($transition-time: 0.5s) {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity $transition-time ease-in-out, visibility 0s linear 0s;
+}
+
+@mixin fadeOut($transition-time: 0.5s) {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition-time ease-in-out, visibility 0s linear $transition-time;
+}
+
+@mixin fadeInAnd($transition-time: 0.5s) {
+  visibility: visible;
+  opacity: 1;
+  transition: all $transition-time ease-in-out, visibility 0s linear 0s;
+}
+
+@mixin fadeOutAnd($transition-time: 0.5s) {
+  visibility: hidden;
+  opacity: 0;
+  transition: all $transition-time ease-in-out, visibility 0s linear $transition-time;
+}
+
+//TRANSFORM
+
+@mixin transform($set, $origin: center) {
+  -webkit-transform: $set;
+  -ms-transform: $set;
+  transform: $set;
+}
+
+//VERTICAL ALIGN BLOCK
+
+@mixin verticalAlignInBlock {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

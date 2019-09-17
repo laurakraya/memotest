@@ -1,0 +1,57 @@
+//ACCESIBILITY
+
+/*
+* Hide only visually, but have it available for screen readers: h5bp.com/v
+Taken from: https://github.com/olefredrik/sass-boilerplate/blob/master/assets/scss/core/_accessibility.scss
+*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element to be focusable
+* when navigated to via the keyboard: h5bp.com/p
+Taken from: https://github.com/olefredrik/sass-boilerplate/blob/master/assets/scss/core/_accessibility.scss
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+//V-ALIGN
+
+.verticalAlign {
+  display: inline-block;
+  vertical-align: middle;
+
+  &+span {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+//CLEAR FLOAT
+
+.clearfix::after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}

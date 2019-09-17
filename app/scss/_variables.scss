@@ -1,16 +1,18 @@
-// Media Queries
-$mq-620-down: "only screen and (max-width: 620px)";
-$mq-620-up: "only screen and (min-width: 620px)";
+//COLORS 
 
-$mq-760-down: "only screen and (max-width: 759px)";
-$mq-760-up: "only screen and (min-width: 760px)";
+$color1: #fff;
+$color2: #AD384C;
+$color3: #CFA597;
+$color4: #80655D;
+$color5: #1C1012;
+$color6: #8DA4A6;
 
-$mq-900-down: "only screen and (max-width: 899px)";
-$mq-900-up: "only screen and (min-width: 900px)";
+//BREAKPOINTS
 
-$mq-1000-down: "only screen and (max-width: 999px)";
-$mq-1000-up: "only screen and (min-width: 1000px)";
-
-$mq-1180-up: "only screen and (min-width: 1180px)";
-
-$mq-1400-up: "only screen and (min-width: 1400px)";
+$breakpoints: (xs: 475px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1800px);
