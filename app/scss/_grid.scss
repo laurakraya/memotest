@@ -26,6 +26,10 @@
       transform: rotateY(180deg);
       border: 7px solid rgb(55, 201, 155);
     }
+
+    &--back {
+      background-color: wheat;
+    }
   }
 
   &--flipped &__side--back {
