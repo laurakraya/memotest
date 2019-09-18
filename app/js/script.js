@@ -1,11 +1,11 @@
 //Store the amount of cards by lvl in an array
-const AmountOfCardsbyLvl = [6, 12, 20];
+const AmountOfCardsbyLvl = [6, 12, 18];
 
 //Select grid from DOM
 const grid = document.querySelector('.grid');
 
 //Need to get this info from the click event
-const currentLvl = 1;
+const currentLvl = 2;
 
 
 function setBoard() {
@@ -15,7 +15,7 @@ function setBoard() {
   for (let i = 0; i < AmountOfCardsbyLvl[currentLvl]; i++) {
     let src = "https://api.adorable.io/avatars/" + i;
     deck.push({
-      'id': i,
+      'cardId': i,
       'src': src
     });
   }
@@ -31,7 +31,7 @@ function setBoard() {
     //Create card div
     const card = document.createElement('div');
     card.classList.add('card');
-    card.setAttribute('data-card', elem.id);
+    card.setAttribute('data-card', elem.cardId);
 
     //Create card back, add src and class
     const cardBack = document.createElement('img');
