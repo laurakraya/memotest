@@ -41,4 +41,12 @@
   &--flipped &__side--front {
     transform: rotateY(0);
   }
+
+  &--matched &__side--back {
+    transform: rotateY(180deg);
+  }
+
+  &--matched &__side--front {
+    transform: rotateY(0);
+  }
 }

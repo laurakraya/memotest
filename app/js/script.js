@@ -5,7 +5,7 @@ const AmountOfCardsbyLvl = [6, 12, 18];
 const grid = document.querySelector('.grid');
 
 //Need to get this info from the click event
-const currentLvl = 2;
+const currentLvl = 0;
 
 
 function setBoard() {
@@ -61,22 +61,36 @@ let cards = document.querySelectorAll('.card');
 
 let cardsFlipped = document.querySelectorAll('.card--flipped');
 
+let firstCard = undefined,
+  secondCard = undefined;
+
 cards.forEach(function (elem) {
 
-  elem.addEventListener('click', function () {
+  elem.addEventListener('click', function flipCard() {
 
     if (!cardsFlipped || cardsFlipped.length < 2) {
 
       elem.classList.toggle('card--flipped');
       cardsFlipped = document.querySelectorAll('.card--flipped');
 
+      //firstCard ? secondCard = this : firstCard = this;
+
+      if (firstCard) {
+        secondCard = this;
+        checkMatch();
+      } else {
+        firstCard = this;
+      }
 
     } else {
 
       cardsFlipped.forEach(function (elem) {
         elem.classList.remove('card--flipped');
       });
+
       cardsFlipped = undefined;
+      firstCard = undefined;
+      secondCard = undefined;
       //this.classList.add('card--flipped');
 
     }
@@ -89,7 +103,16 @@ cards.forEach(function (elem) {
 
 } */
 
-/* function checkMatch() {
+function checkMatch() {
 
+  if (firstCard.dataset.card == secondCard.dataset.card) {
 
-} */
+    firstCard.classList.remove('card--flipped');
+    firstCard.classList.add('card--matched');
+
+    secondCard.classList.remove('card--flipped');
+    secondCard.classList.add('card--matched');
+
+  }
+
+}
